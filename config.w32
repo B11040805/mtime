@@ -1,0 +1,7 @@
+ARG_ENABLE('mtime', 'mtime support', 'no');
+
+if (PHP_MTIME != 'no') {
+	AC_DEFINE('HAVE_MTIME', 1, 'mtime support enabled');
+
+	EXTENSION('mtime', 'mtime.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
